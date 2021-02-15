@@ -1,0 +1,14 @@
+[Unit]
+Description=logmarine log
+
+[Service]
+Type=simple
+ExecStart=/usr/local/src/logmarine
+ExecStop=/bin/kill -s QUIT $MAINPID
+Restart=always
+
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
